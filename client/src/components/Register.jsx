@@ -4,17 +4,21 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { useState } from 'react';
 
+const Register = () => {
 
-const SignUp = () => {
-    const [usernameReg, SetUsernameReg] = useState("");
-    const [passwordReg, SetPasswordReg] = useState("");
+    const [usernameReg, SetUsernameReg] = useState('');
+    const [passwordReg, SetPasswordReg] = useState('');
 
-    axios.post('http://localhost:3001/register', {
-        username: usernameReg,
-        password: passwordReg,
-    }).then((response) => {
-        console.log(response)
-    });
+    const signUp = () => {
+
+        axios.post("http://localhost:3001/api/register", {
+            username: usernameReg,
+            password: passwordReg,
+        }).then(() => {
+            alert("toimii");
+        });
+    };
+
 
     return (
         <div>
@@ -22,12 +26,15 @@ const SignUp = () => {
             <p className="subtitle">Please fill in your account details</p>
             <form>
                 <div className="inputs_container">
-                    <input type="text" placeholder="username.."></input>
-
-                    <input type="text" placeholder="password.." ></input>
+                    <input type="text" name="username1" placeholder="username.." onChange={(e)=>{
+                        SetUsernameReg(e.target.value)
+                    }}/>
+                    <input type="password" name="password1" placeholder="password.." onChange={(e)=>{
+                        SetPasswordReg(e.target.value)
+                    }}/>
 
                 </div>
-                <button onClick={SignUp} className="login_button">Create user</button>
+                <button onClick={signUp} className="login_button">Create user</button>
             </form>
             <div className="link_container">
                 <Link className="Register" to="/">Already have an account? Click here</Link>
@@ -36,4 +43,4 @@ const SignUp = () => {
 
     );
 }
-export default SignUp
+export default Register
