@@ -1,5 +1,5 @@
 import React from 'react'
-import "./login.css"
+import "./register.css"
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { useState } from 'react';
@@ -37,7 +37,7 @@ const Register = () => {
                 <button onClick={signUp} className="login_button">Create user</button>
             </form>
             <div className="link_container">
-                <Link className="Register" to="/">Already have an account? Click here</Link>
+                <Link className="Register" to="/login">Already have an account? Click here</Link>
             </div>
         </div>
 

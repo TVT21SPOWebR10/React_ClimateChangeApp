@@ -2,11 +2,14 @@ import React from 'react'
 import "./login.css"
 import Register from './Register';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Login = () => {
 
     return (
-        <div>
+        
+        
+        <div className="LoginPage">
         <h1 className="title">Sign In </h1>
         <p className="subtitle">Please log in using your username and password</p>
         <form>
@@ -20,6 +23,7 @@ const Login = () => {
           <Link className="Register" to="/register">Click here to register</Link>
         </div>
         </div>
+        
 
     );
 }
