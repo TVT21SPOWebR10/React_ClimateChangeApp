@@ -1,9 +1,8 @@
 import React from 'react'
-import "./login.css"
-import Register from './Register';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import Navbar from './NavBar';
 
 const Login = () => {
 
@@ -26,10 +25,11 @@ const Login = () => {
     };
 
     return (
-        
+        <>
+        <Navbar/>
         
         <div className="LoginPage">
-        <h1 className="title">Sign In </h1>
+        <h1 className="title">Log In </h1>
         <p className="subtitle">Please log in using your username and password</p>
         <form>
             <div className="inputs_container">
@@ -41,19 +41,21 @@ const Login = () => {
                 <input type="password" placeholder="password.." onChange={(e)=>{
                         setpasswordLog(e.target.value)
                     }}/>
-
             </div>
+            
+            <div className="loginstatus">
+                    <h1 className="LoginWrong">{loginStatus}</h1>
+                    </div>
+
             <button onClick={loggaainee} className="login_button" type="submit">Log in</button>
         </form>
         <div className="link_container">
-          <Link className="Register" to="/register">Click here to register</Link>
+          <Link className="Register" to="/register">No account? Click here to register</Link>
         </div>
-                    <div className="loginstatus">
-                    <h1 id="loginshake">{loginStatus}</h1>
-                    </div>
+                
         </div>
         
-
+        </>
     );
 }
 export default Login

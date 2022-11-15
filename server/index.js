@@ -17,7 +17,8 @@ app.post("/api/register", (req, res) => {
     const password = req.body.password
 
     const sqlInsert = "INSERT INTO users (username, password) VALUES (?,?);"
-    db.query(sqlInsert, [username, password], (err, result)=>{
+    db.query(sqlInsert, [username, password], 
+        (err, result)=>{
         console.log(result);
     })
 });
