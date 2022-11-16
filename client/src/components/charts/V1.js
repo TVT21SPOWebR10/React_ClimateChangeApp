@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Chart } from "chart.js/auto";
@@ -156,4 +156,4 @@ const V1 = () => {
     )
 }
 
-export default V1
+export default V1 */

@@ -20,7 +20,7 @@ function App() {
         <Route path='/N3' element={<N3 />} />
       </Routes>
     </div>
-    <Footer/>
+  
     </>
   );
 }
