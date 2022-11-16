@@ -4,7 +4,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import Navbar from './NavBar';
 
-const Login = () => {
+c
+
+function Login() {
 
     const [usernameLog, setusernameLog] = useState('');
     const [passwordLog, setpasswordLog] = useState('');

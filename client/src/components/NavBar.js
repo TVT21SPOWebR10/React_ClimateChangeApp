@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { Link } from 'react-router-dom';
 
@@ -23,7 +21,7 @@ export default function Navbar() {
                             <Link className="nav-link" to="/">N3</Link>
                         </li>
                         <li class="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
+                            <Link className="nav-link" to="/">Login</Link>
                         </li>
                         <li class="nav-item">
                             <Link className="nav-link" to="/register">SignUp</Link>

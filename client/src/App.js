@@ -4,6 +4,7 @@ import Register from './components/Register';
 import N1 from './components/N1';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
+import { LoginContext} from './components/LoginContext'
 
 
 
@@ -13,7 +14,7 @@ function App() {
     
     <div className="App">
       <Routes>
-        <Route path='/Login' element={<Login/>} />
+        <Route path='/' element={<Login/>} />
         <Route path='/Register' element={<Register />} />
         <Route path='/N1' element={<N1 />} />
       </Routes>
