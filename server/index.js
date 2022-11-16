@@ -47,6 +47,32 @@ app.post("/api/login", (req, res)=> {
 });
 
 
+app.get("/:tablename", (req, res)=>{
+
+    const chartData = {
+        getTable: function (tableName, callback){
+            console.log(tableName)
+            return db.query('SELECT * FROM ??', [tableName], callback)
+        }
+    };
+
+    if (req.params.tablename){
+        console.log(req.params.tablename)
+        chartData.getTable(req.params.tablename, (err, result)=>{
+            if(err){
+                res.send(err)
+            }else {
+                res.send(result)
+            }
+        })
+    }
+})
+
+
+
+
+
+
 
 
 app.listen(3001, () => {

@@ -3,14 +3,14 @@ import React from "react";
 export default function Footer() {
     return(
         <footer className='footer'>
-            <div class="flex-container">
-                <div class="ekapalkki">
+            <div className="flex-container">
+                <div className="ekapalkki">
                     <ul>
                     <li>Web sovellusprojekti s2022</li>
                     <li>Ryhmä 10</li>
                     </ul>
                 </div>
-                <div class="link">
+                <div className="link">
                     <p>
                         
                     </p>
