@@ -36,6 +36,58 @@ function authenticateToken(req, res, next) {
   
       next()
     })
+});
+
+app.post("/api/login", (req, res)=> {
+
+    const username = req.body.username
+    const password = req.body.password
+
+    db.query(
+        "SELECT * FROM users WHERE username = ? AND password = ?",
+        [username, password],
+        (err, result)=>{
+
+        if(err) {
+            res.send({err: err})
+        }
+            if (result.length > 0) {
+                res.send(result);
+            }else{
+                res.send({message: "Wrong username or password" });
+            }
+        
+        }
+    );
+});
+
+
+app.get("/:tablename", (req, res)=>{
+
+    const chartData = {
+        getTable: function (tableName, callback){
+            console.log(tableName)
+            return db.query('SELECT * FROM ??', [tableName], callback)
+        }
+    };
+
+    if (req.params.tablename){
+        console.log(req.params.tablename)
+        chartData.getTable(req.params.tablename, (err, result)=>{
+            if(err){
+                res.send(err)
+            }else {
+                res.send(result)
+            }
+        })
+    }
+})
+
+
+
+
+
+
   }
   
 
