@@ -4,6 +4,10 @@ const express = require('express');
 const cors = require("cors");
 const db = require('./database');
 require("./database");
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+const jwt = require('jsonwebtoken');
 
 const app = express();
 
@@ -16,12 +20,39 @@ app.post("/api/register", (req, res) => {
     const username = req.body.username
     const password = req.body.password
 
-    const sqlInsert = "INSERT INTO users (username, password) VALUES (?,?);"
-    db.query(sqlInsert, [username, password], 
-        (err, result)=>{
-        console.log(result);
+    bcrypt.hash(password, saltRounds, (err, hash)=>{
+
+        if (err){
+            console.log(err)
+        }
+        const sqlInsert = "INSERT INTO users (username, password) VALUES (?,?);"
+        db.query(sqlInsert, [username, hash], 
+            (err, result)=>{
+            console.log(result);
+        })
     })
 });
+
+const verifyJWT = (req, res, next)=>{
+    const token = req.headers["x-access-token"]
+
+    if(!token){
+        res.send("need a token")
+    }else{
+        jwt.verify(token, "jwtSecret", (err, decoded)=>{
+            if(err){
+                res.json({auth: false, message: "failed to authenticate"});
+            }else{
+                req.userId = decoded.id;
+                next();
+            }
+        })
+    }
+}
+
+app.get('/isUserAuth', verifyJWT,(req, res)=>{
+    res.send("account is authenticated")
+})
 
 app.post("/api/login", (req, res)=> {
 
@@ -29,17 +60,29 @@ app.post("/api/login", (req, res)=> {
     const password = req.body.password
 
     db.query(
-        "SELECT * FROM users WHERE username = ? AND password = ?",
-        [username, password],
+        "SELECT * FROM users WHERE username = ?;",
+        username,
         (err, result)=>{
 
         if(err) {
             res.send({err: err})
         }
             if (result.length > 0) {
-                res.send(result);
+                bcrypt.compare(password, result[0].password, (error, response)=>{
+                    if(response){
+
+                        const id = result[0].id
+                        const token = jwt.sign({id}, "jwtSecret", {
+                            expiresIn: 300,
+                        })
+
+                        res.json({auth: true, token: token, result: result});
+                    }else{
+                        res.json({auth: false, message: "wrong username or password"});
+                    }
+                })
             }else{
-                res.send({message: "Wrong username or password" });
+                res.json({auth: false, message: "no user exists"});
             }
         
         }
