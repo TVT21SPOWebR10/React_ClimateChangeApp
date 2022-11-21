@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 import Navbar from './NavBar';
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
 
+    const navigate = useNavigate();
     const [usernameReg, SetUsernameReg] = useState('');
     const [passwordReg, SetPasswordReg] = useState('');
 
     const signUp = () => {
+        alert("Register completed!");
 
         axios.post("http://localhost:3001/api/register", {
             username: usernameReg,
