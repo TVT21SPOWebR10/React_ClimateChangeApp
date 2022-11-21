@@ -1,25 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import Navbar from './NavBar';
+import { useNavigate, useLocation } from "react-router-dom";
 
 
-function Login() {
+    const [usernameLog, setusernameLog] = useState('');
+    const [passwordLog, setpasswordLog] = useState('');
 
-    const handleSignupSubmit = async (event) => {
-        event.preventDefault();
-        console.log(event.target.username.value)
-        console.log(event.target.password.value)
+    const [loginStatus, setloginStatus] = useState('');
 
-        try {
-             const result = await axios.post()
-             //do something the result
-        } catch (error) {
-            
-        }
-    }
-    
+    const loggaainee = e => {
+
+        e.preventDefault();
+
+        axios.post("http://localhost:3001/api/login", {
+            username: usernameLog,
+            password: passwordLog,
+        }).then((response) => {
+            setloginStatus(response.data.message);
+            console.log(response.data);
+        });
+    };
 
     return (
         <>
@@ -34,18 +37,24 @@ function Login() {
                         <input type="text" placeholder="username.." name="username"/>
                             <input type="password" placeholder="password.." name="password"/>
 
-                            </div>
-
-                            <button className="login_button" type="submit">Log in</button>
-                        </form>
-                        <div className="link_container">
-                            <Link className="Register" to="/register">No account? Click here to register</Link>
-                        </div>
-
+                <input type="password" placeholder="password.." onChange={(e)=>{
+                        setpasswordLog(e.target.value)
+                    }}/>
+            </div>
+            
+            <div className="loginstatus">
+                    <h1 className="LoginWrong">{loginStatus}</h1>
                     </div>
-                    
 
-                </>
-                );
+            <button onClick={loggaainee} className="login_button" type="submit">Log in</button>
+        </form>
+        <div className="link_container">
+          <Link className="Register" to="/register">No account? Click here to register</Link>
+        </div>
+                
+        </div>
+        
+        </>
+    );
 }
                 export default Login
