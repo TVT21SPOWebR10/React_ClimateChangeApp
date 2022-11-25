@@ -3,13 +3,16 @@ import { Link, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import Navbar from './NavBar';
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
+const Login = () => {
 
     const [usernameLog, setusernameLog] = useState('');
     const [passwordLog, setpasswordLog] = useState('');
-
-    const [loginStatus, setloginStatus] = useState('');
+    const navigate = useNavigate();
+    
+    const [loginStatus, setloginStatus] = useState(false);
+    const [loginStatusText, setloginStatusText] = useState('');
 
     const loggaainee = e => {
 
@@ -19,31 +22,39 @@ import { useNavigate, useLocation } from "react-router-dom";
             username: usernameLog,
             password: passwordLog,
         }).then((response) => {
-            setloginStatus(response.data.message);
+            setloginStatusText(response.data.message);
+            if(!response.data.auth){
+                setloginStatus(false);
+            }else{
             console.log(response.data);
+            localStorage.setItem("token", response.data.token)
+            setloginStatus(true);
+            navigate('/Home');
+            }
         });
     };
 
     return (
         <>
-            <Navbar />
+        <Navbar/>
+        
+        <div className="LoginPage">
+        <h1 className="title">Log In </h1>
+        <p className="subtitle">Please log in using your username and password</p>
+        <form>
+            <div className="inputs_container">
 
-            <div className="LoginPage">
-                <h1 className="title">Log In </h1>
-                <p className="subtitle">Please log in using your username and password</p>
-                <form onSubmit={handleSignupSubmit} >
-                    <div className="inputs_container">
-
-                        <input type="text" placeholder="username.." name="username"/>
-                            <input type="password" placeholder="password.." name="password"/>
+                <input type="text" placeholder="username.." onChange={(e)=>{
+                        setusernameLog(e.target.value)
+                    }}/>
 
                 <input type="password" placeholder="password.." onChange={(e)=>{
                         setpasswordLog(e.target.value)
                     }}/>
             </div>
             
-            <div className="loginstatus">
-                    <h1 className="LoginWrong">{loginStatus}</h1>
+                    <div className="loginstatus">
+                    <h1 className="LoginWrong">{loginStatus}{loginStatusText}</h1>
                     </div>
 
             <button onClick={loggaainee} className="login_button" type="submit">Log in</button>
@@ -57,4 +68,4 @@ import { useNavigate, useLocation } from "react-router-dom";
         </>
     );
 }
-                export default Login
+export default Login

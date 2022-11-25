@@ -1,4 +1,4 @@
-/*import React from 'react'
+import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Chart } from "chart.js/auto";
@@ -63,7 +63,7 @@ const V1 = () => {
                     },
                     {
                         label: "Southern Hemisphere Annual",
-                        data: response.data.map(d => ({ time: new Date(d.Time_sa), value: d.anomaly_sa })),
+                        data: response.data.filter(d => ({ time: new Date(d.Time_sa), value: d.anomaly_sa })),
                         borderColor: "red",
                         borderWidth: 1,
                         backgroundColor: "#FF6B6B",
@@ -137,6 +137,7 @@ const V1 = () => {
                 display: true,
                 text: "Temperature Anomalies from 1850",
             },
+          
         },
         scales: {
             x: {
@@ -156,4 +157,4 @@ const V1 = () => {
     )
 }
 
-export default V1 */
+export default V1 

@@ -1,5 +1,4 @@
-const authRoutes = require ("./routes/auth")
-const userRoutes = require ("./routes/users")
+
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -15,8 +14,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 app.use(express.json());
-app.use("api/auth", authRoutes)
-app.use("api/users", userRoutes)
+
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}))
