@@ -1,8 +1,16 @@
 import React from 'react'
-
-export default function Home() {
+import Navbar from './NavBar'
+export default function Home(props) {
 
   return (
-    <div>Home Page</div>
+    <>
+    <Navbar />
+    <div>
+      <div>User login status: {props.Loggedin ? "is logged in" : "PLEASE LOGIN FIRST"}</div>
+    </div>
+    <div>
+      <button onClick={ props.logout }>Logout</button>
+    </div>
+    </>
   )
 }

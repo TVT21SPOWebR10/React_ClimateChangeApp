@@ -5,12 +5,11 @@ import axios from 'axios';
 import Navbar from './NavBar';
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = (props) => {
 
     const [usernameLog, setusernameLog] = useState('');
     const [passwordLog, setpasswordLog] = useState('');
     const navigate = useNavigate();
-    
     const [loginStatus, setloginStatus] = useState(false);
     const [loginStatusText, setloginStatusText] = useState('');
 
@@ -28,6 +27,8 @@ const Login = () => {
             }else{
             console.log(response.data);
             localStorage.setItem("token", response.data.token)
+            const receivedJWT = response.data.token;
+            props.login(receivedJWT);
             setloginStatus(true);
             navigate('/Home');
             }
