@@ -3,6 +3,7 @@ import Navbar from './NavBar'
 import { useState } from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2'
 import {Chart as ChartJs} from "chart.js/auto"
+import v3 from './charts/v3';
 
 const productSales = [
     {year: 1993, sales: 500},
@@ -33,6 +34,7 @@ const productSales = [
         <div><Bar data={chartData}/></div>
         <div><Line data={chartData}/></div>
         <div><Pie data={chartData}/></div>
+        <v3 /> <br/>
       </div>
       </>
     );
