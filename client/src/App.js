@@ -41,7 +41,6 @@ function App() {
         <Route path="*" element={ <N1 Loggedin={userJwt != null}/>}/>
       </Routes>
     </div>
-    <Footer/>
     </>
   );
 }
