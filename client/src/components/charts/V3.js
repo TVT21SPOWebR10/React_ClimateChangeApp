@@ -20,53 +20,84 @@ const V3 = () => {
             setTableData({
                 datasets: [
                     {
-                        label: "Annual Havaji",
-                        data: response.data.map(d => ({ time: new Date(d.year), value: d.deseasonalized })),
+                        label: "Annual Mean Data",
+                        data: response.data.filter(d => d.mean != 0).map(d => ({ time: new Date(d.year_annual + "-01-01"), value: d.mean })),
                         borderColor: "black",
                         backgroundColor: "grey",
+                        borderWidth: 2,
+                        
 
                         parsing: {
                             xAxisKey: "time",
                             yAxisKey: "value",
                         },
                         pointRadius: 0,
-                        borderWidth: 0.9,
 
                     },
                     {
-                        label: "Monthly Havaji",
-                        data: response.data.map(d => ({ time: new Date(d.decimal_date), value: d.average })),
-                        borderColor: "black",
-                        backgroundColor: "grey",
-
-                        parsing: {
-                            xAxisKey: "time",
-                            yAxisKey: "value",
-                        },
-                        pointRadius: 0,
-                        borderWidth: 0.9,
-
-                    },
-                    
-                    {
-                        label: "Antarctic ice annualy",
-                        data: response2.data.map(d => ({ time: new Date(d.Mean_Air_Age), value: d.CO2_smoothed })),
-                        borderColor: "red",
+                        label: "Monthly mean Data",
+                        data: response.data.map(d => ({ time: new Date(d.year + "-" + d.month), value: d.average })),
+                        borderColor: "#000AFF",
                         borderWidth: 1,
-                        backgroundColor: "#FF6B6B",
+                        backgroundColor: "#6A70FF",
                         parsing: {
                             xAxisKey: "time",
                             yAxisKey: "value",
                         },
                         pointRadius: 0,
+                    },
+                    {
+                        label: "Optional DSS",
+                        data: response2.data.filter(d => d.DSS_Year_AD != 0).map(d => ({ time: new Date(d.DSS_date + "-01-01"), value: d.DSS_mixingratio })),
+                        borderColor: "green",
+                        backgroundColor: "grey",
+                        borderWidth: 2,
+
+
+                        parsing: {
+                            xAxisKey: "time",
+                            yAxisKey: "value",
+                        },
+                        pointRadius: 0,
+                        hidden: true
 
                     },
-                
+                        
+                    
+                   {
+                        label: "Optional DE",
+                        data: response2.data.filter(d => d.De08_date != 0).map(d => ({ time: new Date(d.De08_date + "-01-01"), value: d.De08_Mixingratio })),
+                        borderColor: "purple",
+                        backgroundColor: "grey",
+                        borderWidth: 2,
+
+                        parsing: {
+                            xAxisKey: "time",
+                            yAxisKey: "value",
+                        },
+                        pointRadius: 0,
+                        hidden: true
+
+                    },
+                    {
+                        label: "Optional DE08",
+                        data: response2.data.filter(d => d.De08_2_date != 0).map(d => ({ time: new Date(d.De08_2_date + "-01-01"), value: d.De08_2_mixingratio })),
+                        borderColor: "red",
+                        backgroundColor: "grey",
+                        borderWidth: 2,
+
+                        parsing: {
+                            xAxisKey: "time",
+                            yAxisKey: "value",
+                        },
+                        pointRadius: 0,
+                        hidden: true
+
+                    },
                 ],
             })
-
         } catch (error) {
-            console.log("err")
+            console.log(error)
         }
     }
 
@@ -75,15 +106,20 @@ const V3 = () => {
     }, [])
 
 
-    const options = {
+     const options = {
         responsive: true,
+        interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          stacked: false,
         plugins: {
             legend: {
                 position: "top",
             },
             title: {
                 display: true,
-                text: "CO2 measurements",
+                text: " CO2 Mauna Loa ",
             },
         },
         scales: {
@@ -100,7 +136,8 @@ const V3 = () => {
     };
 
     return (
-        <div className='chartv3'>{tableData && <Line options={options} data={tableData} />}</div>
+        <div className='chartv3'>{tableData && <Line options={options} data={tableData} />}
+        </div>
     )
 }
 
