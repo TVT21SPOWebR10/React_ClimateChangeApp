@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar(props) {
+
+
+
     return (
         <nav id="nav" className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
             <div className="container-fluid">
@@ -27,6 +31,9 @@ export default function Navbar(props) {
                             <Link className="nav-link" to="/register">SignUp</Link>
                         </li>
                     </ul>
+                    <div>
+                    <button onClick={ props.logout }>Logout</button>
+                    </div>
                 </div>
             </div>
         </nav>

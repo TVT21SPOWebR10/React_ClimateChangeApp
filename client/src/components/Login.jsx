@@ -36,8 +36,8 @@ const Login = (props) => {
     };
 
     return (
-        <>
-        <Navbar/>
+        
+        
         
         <div className="LoginPage">
         <h1 className="title">Log In </h1>
@@ -66,7 +66,7 @@ const Login = (props) => {
                 
         </div>
         
-        </>
+        
     );
 }
 export default Login

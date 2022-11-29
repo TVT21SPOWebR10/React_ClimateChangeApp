@@ -153,7 +153,7 @@ const V1 = () => {
     };
 
     return (
-        <div className='max-w-[1000px]'>{tableData && <Line options={options} data={tableData} />}</div>
+        <div className="chart1">{tableData && <Line options={options} data={tableData} />}</div>
     )
 }
 

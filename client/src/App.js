@@ -7,16 +7,22 @@ import Footer from './components/Footer';
 import N2 from './components/N2';
 import N3 from './components/N3';
 import Home from './components/Home';
+import Notfound from './components/Notfound';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+
+
 
 const jwtFromStorage = localStorage.getItem("token");
 
 function App() {
 
+  const navigate = useNavigate();
+
   const [userJwt, setUserJwt] = useState(jwtFromStorage);
 
   let authRoutes = <>
-    <Route path='/Login' element={<Login login={ newJwt => {
+    <Route path='/' element={<Login login={ newJwt => {
       setUserJwt(newJwt)
       window.localStorage.setItem('token', newJwt)
       } } />} />
@@ -26,6 +32,7 @@ function App() {
   if(userJwt != null){
     authRoutes = <Route path="/Home" element={ <Home Loggedin={userJwt != null} logout={()=> {
     setUserJwt(null)
+    navigate ('/')
     window.localStorage.removeItem('token');
     }}/>}/>
   }
@@ -38,7 +45,7 @@ function App() {
         <Route path='/N2' element={<N2 />} />
         <Route path='/N3' element={<N3 />} />
         {authRoutes}
-        <Route path="*" element={ <N1 Loggedin={userJwt != null}/>}/>
+        <Route path="*" element={ <Notfound Loggedin={userJwt != null}/>}/>
       </Routes>
     </div>
   
