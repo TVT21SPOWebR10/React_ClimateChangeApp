@@ -30,18 +30,6 @@ const V6 = () => {
                         pointRadius: 0,
 
                     },
-                    {
-                        label: "CO2 Concentration Sigma Mean Data",
-                        data: response.data.map(d => ({ xAxis: d.age, value: d.co2_ppm })),
-                        borderColor: '#FF9800',
-                        borderWidth: 1,
-                        backgroundColor: "#9F0500",
-                        parsing: {
-                            xAxisKey: "xAxis",
-                            yAxisKey: "value",
-                        },
-                        pointRadius: 0,
-                    },
                 ],
             })
         } catch (error) {
@@ -73,7 +61,7 @@ const V6 = () => {
         scales: {
             x: {
                 type: "linear",
-                min: -60,
+                min: 1949,
                 max: 806000
             },
             yAxis: {
