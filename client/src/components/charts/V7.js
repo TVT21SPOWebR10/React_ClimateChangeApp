@@ -118,7 +118,7 @@ const V7 = () => {
     };
 
     return (
-        <div className='max-w-[1000px]'>{tableData && <Line options={options} data={tableData} />}
+        <div className='chartv7'>{tableData && <Line options={options} data={tableData} />}
 
         </div>
 

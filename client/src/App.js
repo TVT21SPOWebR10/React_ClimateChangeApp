@@ -48,7 +48,6 @@ function App() {
         <Route path="*" element={ <Notfound Loggedin={userJwt != null}/>}/>
       </Routes>
     </div>
-  
     </>
   );
 }

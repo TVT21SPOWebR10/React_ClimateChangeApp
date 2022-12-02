@@ -108,3 +108,30 @@ footer div.flex-container {
   color: red;
 }
 
+.chartv1{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+}
+.chartv5{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+}
+.chartv6{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+}
+.chartv7{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+}
+body{
+  background-color: #36393F;
+}

@@ -77,7 +77,7 @@ app.post("/api/login", (req, res)=> {
 
                         const id = result[0].id
                         const token = jwt.sign({id}, "jwtSecret", {
-                            expiresIn: 300,
+                            expiresIn: 3000,
                         })
 
                         res.json({auth: true, token: token, result: result});
@@ -114,6 +114,7 @@ app.get("/:tablename", (req, res)=>{
         })
     }
 })
+
 
 
 
