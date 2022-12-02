@@ -1,3 +1,4 @@
+
 footer ul {
   list-style: none;
 }
@@ -16,16 +17,19 @@ footer {
 footer div.flex-container {
   display: flex;
   justify-content: space-around;
-  min-width: 500px;
+  min-width: 600px;
 }
 
 .title {
   color: black;
   text-align: center;
   margin-bottom: 1rem;
+  margin-top: -1.5rem;
+  
 }
 
 .subtitle {
+  font-size: 20px;
   color: black;
   text-align: center;
   margin-bottom: rem;
@@ -67,9 +71,33 @@ footer div.flex-container {
   outline: medium none;
 }
 
+/* LOGIN CSS
+*
+*
+*
+*
+*
+*
+*
+*/
+
+
+  
+
+.loginBack {
+  background-image:url("assets/aerial-shot-beautiful-tree-forest-covered-with-fog-bled-slovenia.jpg") ;
+  height: 880px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  position: relative;
+  
+}
+
+
 .login_button {
   display: block;
-  margin: 3rem auto 1rem auto;
+  margin: 2rem auto 1rem auto;
   width: 280px;
   padding: 0.75rem 1rem;
   border-radius: 25px;
@@ -92,8 +120,17 @@ footer div.flex-container {
   justify-content: center;
 }
 
+.registerBack {
+  background-image: url("assets/Registerbackground.jpg");
+  height: 880px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  position: relative;
+}
+
 .Register {
-  color: black;
+  color: white;
 
 }
 
@@ -108,9 +145,16 @@ footer div.flex-container {
   color: red;
 }
 
+/* ChartCSS
+*
+*
+*
+*
+*
+*/
+
 .chartv1{
-  margin: auto;
-  width: 50%;
+  
   padding: 10px;
   background-color: white;
 }

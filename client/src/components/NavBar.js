@@ -51,9 +51,7 @@ export default function Navbar(props) {
                         </>
                         }
                     </ul>
-                    <div>
-                    <button onClick={ props.logout }>Logout</button>
-                    </div>
+                    
                 </div>
             </div>
         </nav>
