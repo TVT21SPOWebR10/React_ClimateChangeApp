@@ -13,6 +13,7 @@ const Login = (props) => {
     const [loginStatus, setloginStatus] = useState(false);
     const [loginStatusText, setloginStatusText] = useState('');
 
+
     const loggaainee = e => {
 
         e.preventDefault();
@@ -21,7 +22,6 @@ const Login = (props) => {
             username: usernameLog,
             password: passwordLog,
         }).then((response) => {
-            setloginStatusText(response.data.message);
             if(!response.data.auth){
                 setloginStatus(false);
             }else{
@@ -30,6 +30,7 @@ const Login = (props) => {
             const receivedJWT = response.data.token;
             props.login(receivedJWT);
             setloginStatus(true);
+            localStorage.setItem("id", response.data.result[0].id);
             navigate('/Home');
             }
         });

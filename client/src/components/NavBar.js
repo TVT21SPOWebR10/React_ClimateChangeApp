@@ -9,6 +9,7 @@ export default function Navbar(props) {
     const navigate = useNavigate();
     const loggaout = () => {
         window.localStorage.removeItem('token');
+        window.localStorage.removeItem('id');
         window.location.reload(false);
         navigate('/login')
     }

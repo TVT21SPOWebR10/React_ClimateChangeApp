@@ -112,6 +112,19 @@ app.get("/:tablename", (req, res)=>{
 })
 
 
+app.delete("/delete/:id", (req, res)=>{
+    const id = req.params.id
+    const sqlDelete = "DELETE  FROM users WHERE id = ?"
+    db.query(sqlDelete, id, (err, result)=>{
+        if(err){
+            console.log(err)
+        } else{
+            res.send(result)
+        }
+    }) 
+})
+
+
 
 
 
