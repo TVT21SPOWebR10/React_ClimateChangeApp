@@ -159,3 +159,16 @@ body{
   text-align: center;
   margin-bottom: 1rem;
 }
+
+.notes{
+  width: 530px;
+  height: 100px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #E2E2E2;
+  outline: medium none;
+  resize: none;
+  display: block;
+}

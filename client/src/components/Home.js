@@ -11,15 +11,14 @@ export default function Home(props) {
 
   const navigate = useNavigate();
   const username = window.localStorage.getItem('username');
-  const deleteAccount = () => {
-    
-    //poistaa käyttäjän tietokannasta.
+
+   //poistaa käyttäjän tietokannasta.
+  const deleteAccount = () => {  
     const id = window.localStorage.getItem('id');
     axios.delete(`http://localhost:3001/delete/${id}`)
       .then(res => {
         console.log(res)
-        window.localStorage.removeItem('token');
-        window.localStorage.removeItem('id');
+        window.localStorage.clear();
         window.location.reload(false);
         navigate('/Login')
       })
@@ -40,6 +39,33 @@ export default function Home(props) {
   const [chart5, setChart5] = useState(false);
   const [chart6, setChart6] = useState(false);
   const [chart7, setChart7] = useState(false);
+
+  //notet
+  const [notes, setNotes] = useState([]);
+  const [notes5, setNotes5] = useState([]);
+  const [notes6, setNotes6] = useState([]);
+  const [notes7, setNotes7] = useState([]);
+
+  //haetaan notet localstoragesta.
+  useEffect(() => {
+    const notes = window.localStorage.getItem('note');
+    if ( notes !== null ) setNotes(JSON.parse(notes));
+    const notes5 = window.localStorage.getItem('note5');
+    if ( notes5 !== null ) setNotes5(JSON.parse(notes5));
+    const notes6 = window.localStorage.getItem('note6');
+    if ( notes6 !== null ) setNotes6(JSON.parse(notes6));
+    const notes7 = window.localStorage.getItem('note7');
+    if ( notes7 !== null ) setNotes7(JSON.parse(notes7));
+    }, []);
+
+
+    //asettaa notet localstorageen.
+    useEffect(() => {
+      window.localStorage.setItem('note', JSON.stringify(notes));
+      window.localStorage.setItem('note5', JSON.stringify(notes5));
+      window.localStorage.setItem('note6', JSON.stringify(notes6));
+      window.localStorage.setItem('note7', JSON.stringify(notes7));
+    }, [notes, notes5, notes6, notes7]);
 
   //haetaan graafit localstoragesta.
   useEffect(() => {
@@ -74,6 +100,25 @@ export default function Home(props) {
     window.localStorage.setItem('chart7', false);
   }
 
+  //handechange funktiot jokaisen graafin omalle notelle
+  const handleChange = e => {
+    localStorage.setItem("notes", e.target.value);
+    setNotes(e.target.value);
+  };
+  const handleChange5 = e => {
+    localStorage.setItem("notes5", e.target.value);
+    setNotes5(e.target.value);
+  };
+  const handleChange6 = e => {
+    localStorage.setItem("notes6", e.target.value);
+    setNotes6(e.target.value);
+  };
+  const handleChange7 = e => {
+    localStorage.setItem("notes7", e.target.value);
+    setNotes7(e.target.value);
+  };
+
+
 
   return (
     <>
@@ -98,10 +143,14 @@ export default function Home(props) {
       
     </div> <br/>
     <div className="charts">
-      {chart ? <V1 /> : null} <br/>
-      {chart5 ? <V5 /> : null}  <br/>
-      {chart6 ? <V6 /> : null}  <br/>
-      {chart7 ? <V7 /> : null}  <br/>
+      {chart ? <V1 /> : null} 
+      {chart ? <input type="text" placeholder="Add notes..." className="notes" value={notes} onChange={handleChange}/> : null} <br/>
+      {chart5 ? <V5 /> : null}
+      {chart5 ? <input type="text" placeholder="Add notes..." className="notes" value={notes5} onChange={handleChange5}/> : null} <br/>
+      {chart6 ? <V6 /> : null}
+      {chart6 ? <input type="text" placeholder="Add notes..." className="notes" value={notes6} onChange={handleChange6}/> : null} <br/>
+      {chart7 ? <V7 /> : null}
+      {chart7 ? <input type="text" placeholder="Add notes..." className="notes" value={notes7} onChange={handleChange7}/> : null} <br/>
     </div>
     </>
   )
