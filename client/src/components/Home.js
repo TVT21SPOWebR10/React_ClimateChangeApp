@@ -12,7 +12,7 @@ export default function Home(props) {
   const navigate = useNavigate();
   const username = window.localStorage.getItem('username');
 
-   //poistaa käyttäjän tietokannasta.
+   //poistaa käyttäjän tietokannasta sekä kaikki käyttäjän luomat visualisoinnit.
   const deleteAccount = () => {  
     const id = window.localStorage.getItem('id');
     axios.delete(`http://localhost:3001/delete/${id}`)
@@ -129,17 +129,17 @@ export default function Home(props) {
     </div>
     
     <div className="chartBtns">
-      <button className="chartBtn" onClick={() => setChart(true)}>V1-V2</button>
-      <button className="chartBtn" onClick={() => setChart5(true)}>V5</button>
-      <button className="chartBtn" onClick={() => setChart6(true)}>V6</button>
-      <button className="chartBtn" onClick={() => setChart7(true)}>V7</button>
+      <button className="chartBtn" onClick={() => setChart(true)}>Add V1-V2</button>
+      <button className="chartBtn" onClick={() => setChart5(true)}>Add V5</button>
+      <button className="chartBtn" onClick={() => setChart6(true)}>Add V6</button>
+      <button className="chartBtn" onClick={() => setChart7(true)}>Add V7</button>
       
-      <button className="chartBtn" onClick={() => setChart(false)}>Delete V1-V2</button>
-      <button className="chartBtn" onClick={() => setChart5(false)}>Delete V5</button>
-      <button className="chartBtn" onClick={() => setChart6(false)}>Delete V6</button>
-      <button className="chartBtn" onClick={() => setChart7(false)}>Delete V7</button>
+      <button className="chartBtnDel" onClick={() => setChart(false)}>Delete V1-V2</button>
+      <button className="chartBtnDel" onClick={() => setChart5(false)}>Delete V5</button>
+      <button className="chartBtnDel" onClick={() => setChart6(false)}>Delete V6</button>
+      <button className="chartBtnDel" onClick={() => setChart7(false)}>Delete V7</button>
       
-      <button className="chartBtn" onClick={hideChart}>Delete all</button>
+      <button className="chartBtnDel" onClick={hideChart}>Delete all</button>
       
     </div> <br/>
     <div className="charts">
