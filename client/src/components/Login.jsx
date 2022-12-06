@@ -31,6 +31,7 @@ const Login = (props) => {
             props.login(receivedJWT);
             setloginStatus(true);
             localStorage.setItem("id", response.data.result[0].id);
+            localStorage.setItem("username", response.data.result[0].username);
             navigate('/Home');
             }
         });
