@@ -207,3 +207,9 @@ body{
   border: 2px solid #940303;
   background-color: rgb(253, 116, 116);
 }
+
+.chartBtns{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
