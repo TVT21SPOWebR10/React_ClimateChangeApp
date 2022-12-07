@@ -4,8 +4,8 @@ const db = mysql.createConnection({
     
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: 'webproject'
+    password: '', //salasana123 uus
+    database: 'webproject' 
 
 })
 

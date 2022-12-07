@@ -9,7 +9,7 @@ import V6 from './charts/V6';
 
     return (
         <>
-        <Navbar />
+        <Navbar /> 
         <V1 /> <br/>
         <V5 /> <br/>
         <V6 /> <br/>
