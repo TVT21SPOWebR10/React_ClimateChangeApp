@@ -152,7 +152,7 @@ const V1 = () => {
     };
 
     return (
-        <div className='chartv1'>{tableData && <Line options={options} data={tableData} />}</div>
+        <div className='chart'>{tableData && <Line options={options} data={tableData} />}</div>
     )
 }
 

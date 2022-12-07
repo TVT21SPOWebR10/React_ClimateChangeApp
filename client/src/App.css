@@ -108,31 +108,13 @@ footer div.flex-container {
   color: red;
 }
 
-.chartv1{
+.chart{
   margin: auto;
   width: 50%;
   padding: 10px;
   background-color: white;
+}
 
-}
-.chartv5{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  background-color: white;
-}
-.chartv6{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  background-color: white;
-}
-.chartv7{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  background-color: white;
-}
 body{
   background-color: #36393F;
 }
@@ -213,3 +195,40 @@ body{
   justify-content: center;
   gap: 10px;
 }
+
+.twoRows {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+}
+
+.grid {
+  display: block;
+  flex-wrap: nowrap;
+}
+  
+.twoRows .chart{
+  width: 100%;
+  flex-basis: 25%;
+  background-color: white;
+}
+
+.toggleViewBtn{
+  background-color: #4e65f7;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+}
+

@@ -71,7 +71,7 @@ const V6 = () => {
     };
 
     return (
-        <div className='chartv6'>
+        <div className='chart'>
             {tableData && <Line options={options} data={tableData} />}
         </div>
     )

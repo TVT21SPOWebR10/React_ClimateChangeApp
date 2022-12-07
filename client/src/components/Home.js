@@ -6,6 +6,7 @@ import V1 from './charts/V1';
 import V5 from './charts/V5';
 import V6 from './charts/V6';
 import V7 from './charts/V7';
+import V3 from './charts/V3';
 
 export default function Home(props) {
 
@@ -27,21 +28,30 @@ export default function Home(props) {
       })
   }
   
-  //kysyy varmistuksen ennen poistoa.
+  //kysyy varmistuksen ennen käyttäjän poistoa.
   const confirmDelete = () => {
     if (window.confirm('Are you sure you want to delete your account?')) {
       deleteAccount();
     }
   }
 
+  const [twoRows, setTwoRows] = useState(false);
+
+  const handleButtonClick = () => {
+    setTwoRows(!twoRows);
+  }
+
+
   //graafit
   const [chart, setChart] = useState(false);
+  const [chart3, setChart3] = useState(false);
   const [chart5, setChart5] = useState(false);
   const [chart6, setChart6] = useState(false);
   const [chart7, setChart7] = useState(false);
 
   //notet
   const [notes, setNotes] = useState([]);
+  const [notes3, setNotes3] = useState([]);
   const [notes5, setNotes5] = useState([]);
   const [notes6, setNotes6] = useState([]);
   const [notes7, setNotes7] = useState([]);
@@ -50,6 +60,8 @@ export default function Home(props) {
   useEffect(() => {
     const notes = window.localStorage.getItem('note');
     if ( notes !== null ) setNotes(JSON.parse(notes));
+    const notes3 = window.localStorage.getItem('note3');
+    if ( notes3 !== null ) setNotes3(JSON.parse(notes3));
     const notes5 = window.localStorage.getItem('note5');
     if ( notes5 !== null ) setNotes5(JSON.parse(notes5));
     const notes6 = window.localStorage.getItem('note6');
@@ -62,15 +74,18 @@ export default function Home(props) {
     //asettaa notet localstorageen.
     useEffect(() => {
       window.localStorage.setItem('note', JSON.stringify(notes));
+      window.localStorage.setItem('note3', JSON.stringify(notes3));
       window.localStorage.setItem('note5', JSON.stringify(notes5));
       window.localStorage.setItem('note6', JSON.stringify(notes6));
       window.localStorage.setItem('note7', JSON.stringify(notes7));
-    }, [notes, notes5, notes6, notes7]);
+    }, [notes, notes3, notes5, notes6, notes7]);
 
   //haetaan graafit localstoragesta.
   useEffect(() => {
     const chart = window.localStorage.getItem('chart');
     if ( chart !== null ) setChart(JSON.parse(chart));
+    const chart3 = window.localStorage.getItem('chart3');
+    if ( chart3 !== null ) setChart3(JSON.parse(chart3));
     const chart5 = window.localStorage.getItem('chart5');
     if ( chart5 !== null ) setChart5(JSON.parse(chart5));
     const chart6 = window.localStorage.getItem('chart6');
@@ -82,19 +97,22 @@ export default function Home(props) {
     //asettaa graafit localstorageen.
     useEffect(() => {
       window.localStorage.setItem('chart', JSON.stringify(chart));
+      window.localStorage.setItem('chart3', JSON.stringify(chart3));
       window.localStorage.setItem('chart5', JSON.stringify(chart5));
       window.localStorage.setItem('chart6', JSON.stringify(chart6));
       window.localStorage.setItem('chart7', JSON.stringify(chart7));
-    }, [chart, chart5, chart6, chart7]);
+    }, [chart, chart3, chart5, chart6, chart7]);
 
 
-  //piilottaa kaikki graafit kerralla.
+  //poistaa kaikki graafit kerralla.
   const hideChart = () => {
     setChart(false);
+    setChart3(false);
     setChart5(false);
     setChart6(false);
     setChart7(false);
     window.localStorage.setItem('chart', false);
+    window.localStorage.setItem('chart3', false);
     window.localStorage.setItem('chart5', false);
     window.localStorage.setItem('chart6', false);
     window.localStorage.setItem('chart7', false);
@@ -104,6 +122,10 @@ export default function Home(props) {
   const handleChange = e => {
     localStorage.setItem("notes", e.target.value);
     setNotes(e.target.value);
+  };
+  const handleChange3 = e => {
+    localStorage.setItem("notes3", e.target.value);
+    setNotes3(e.target.value);
   };
   const handleChange5 = e => {
     localStorage.setItem("notes5", e.target.value);
@@ -118,8 +140,8 @@ export default function Home(props) {
     setNotes7(e.target.value);
   };
 
-
-
+  
+  
   return (
     <>
     <Navbar />
@@ -130,27 +152,48 @@ export default function Home(props) {
     
     <div className="chartBtns">
       <button className="chartBtn" onClick={() => setChart(true)}>Add V1-V2</button>
+      <button className="chartBtn" onClick={() => setChart3(true)}>Add V3-V4</button>
       <button className="chartBtn" onClick={() => setChart5(true)}>Add V5</button>
       <button className="chartBtn" onClick={() => setChart6(true)}>Add V6</button>
       <button className="chartBtn" onClick={() => setChart7(true)}>Add V7</button>
       
       <button className="chartBtnDel" onClick={() => setChart(false)}>Delete V1-V2</button>
+      <button className="chartBtnDel" onClick={() => setChart3(false)}>Delete V3-V4</button>
       <button className="chartBtnDel" onClick={() => setChart5(false)}>Delete V5</button>
       <button className="chartBtnDel" onClick={() => setChart6(false)}>Delete V6</button>
       <button className="chartBtnDel" onClick={() => setChart7(false)}>Delete V7</button>
       
       <button className="chartBtnDel" onClick={hideChart}>Delete all</button>
-      
+
     </div> <br/>
-    <div className="charts">
+
+
+    <div>
+      <button className="toggleViewBtn" onClick={handleButtonClick}>
+        Toggle grid view
+      </button>
+      <div className={twoRows ? 'twoRows' : 'grid'}>
+        <div className="1">
       {chart ? <V1 /> : null} 
-      {chart ? <input type="text" placeholder="Add notes..." className="notes" value={notes} onChange={handleChange}/> : null} <br/>
+      {chart ? <input type="text" placeholder="Add notes..." className="notes" value={notes} onChange={handleChange}/> : null} 
+      </div>
+      <div className="3">
+      {chart3 ? <V3 /> : null}
+      {chart3 ? <input type="text" placeholder="Add notes..." className="notes" value={notes3} onChange={handleChange3}/> : null} 
+      </div>
+      <div className="5">
       {chart5 ? <V5 /> : null}
-      {chart5 ? <input type="text" placeholder="Add notes..." className="notes" value={notes5} onChange={handleChange5}/> : null} <br/>
+      {chart5 ? <input type="text" placeholder="Add notes..." className="notes" value={notes5} onChange={handleChange5}/> : null} 
+      </div>
+      <div className="7">
       {chart6 ? <V6 /> : null}
-      {chart6 ? <input type="text" placeholder="Add notes..." className="notes" value={notes6} onChange={handleChange6}/> : null} <br/>
+      {chart6 ? <input type="text" placeholder="Add notes..." className="notes" value={notes6} onChange={handleChange6}/> : null} 
+      </div>
+      <div className="9">
       {chart7 ? <V7 /> : null}
-      {chart7 ? <input type="text" placeholder="Add notes..." className="notes" value={notes7} onChange={handleChange7}/> : null} <br/>
+      {chart7 ? <input type="text" placeholder="Add notes..." className="notes" value={notes7} onChange={handleChange7}/> : null} 
+      </div>
+      </div>
     </div>
     </>
   )
