@@ -26,7 +26,8 @@ const Register = () => {
     return (
         <>
         <Navbar/>
-        <div>
+        <div className="registerBack">
+        <div className="registerform">
             <h1 className="title">Create account </h1>
             <p className="subtitle">Please fill in your account details</p>
             <form>
@@ -44,6 +45,7 @@ const Register = () => {
             <div className="link_container">
                 <Link className="Register" to="/login">Already have an account? Click here</Link>
             </div>
+        </div>
         </div>
      </>
     );

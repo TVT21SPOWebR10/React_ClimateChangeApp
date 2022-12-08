@@ -23,9 +23,11 @@ footer div.flex-container {
   color: black;
   text-align: center;
   margin-bottom: 1rem;
+  margin-top: -1.5rem;
 }
 
 .subtitle {
+  font-size: 20px;
   color: black;
   text-align: center;
   margin-bottom: rem;
@@ -67,9 +69,20 @@ footer div.flex-container {
   outline: medium none;
 }
 
+.loginBack {
+  background-image:url("assets/aerial-shot-beautiful-tree-forest-covered-with-fog-bled-slovenia.jpg") ;
+  height: 880px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  position: relative;
+  
+}
+
+
 .login_button {
   display: block;
-  margin: 3rem auto 1rem auto;
+  margin: 2rem auto 1rem auto;
   width: 280px;
   padding: 0.75rem 1rem;
   border-radius: 25px;
@@ -92,8 +105,17 @@ footer div.flex-container {
   justify-content: center;
 }
 
+.registerBack {
+  background-image: url("assets/Registerbackground.jpg");
+  height: 880px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  position: relative;
+}
+
 .Register {
-  color: black;
+  color: rgb(0, 0, 0);
 
 }
 
@@ -232,3 +254,13 @@ body{
   margin: 10px;
 }
 
+.loginform{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.registerform{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -118,7 +118,7 @@ export default function Home(props) {
     window.localStorage.setItem('chart7', false);
   }
 
-  //handechange funktiot jokaisen graafin omalle notelle
+  //handlechange funktiot jokaisen graafin omalle notelle
   const handleChange = e => {
     localStorage.setItem("notes", e.target.value);
     setNotes(e.target.value);
@@ -140,7 +140,7 @@ export default function Home(props) {
     setNotes7(e.target.value);
   };
 
-  
+
   
   return (
     <>

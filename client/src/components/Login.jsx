@@ -40,8 +40,8 @@ const Login = (props) => {
     return (
         <>
         <Navbar/>
-        
-        <div className="LoginPage">
+        <div className="loginBack">
+        <div className="loginform">
         <h1 className="title">Log In </h1>
         <p className="subtitle">Please log in using your username and password</p>
         <form>
@@ -65,7 +65,7 @@ const Login = (props) => {
         <div className="link_container">
           <Link className="Register" to="/register">No account? Click here to register</Link>
         </div>
-                
+        </div>
         </div>
         
         </>
