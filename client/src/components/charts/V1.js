@@ -129,6 +129,17 @@ const V1 = () => {
 
     const options = {
         responsive: true,
+        responsiveOptions: [
+            ['screen and (min-width: 600px)', {
+              maintainAspectRatio: false,
+              maxWidth: 600
+            }],
+            ['screen and (max-width: 600px)', {
+              maintainAspectRatio: true
+            }]
+          ],
+        
+        
         plugins: {
             legend: {
                 position: "top",
@@ -153,7 +164,7 @@ const V1 = () => {
     };
 
     return (
-        <div className='chartv1'>{tableData && <Line options={options} data={tableData} />}</div>
+        <div className='chart'>{tableData && <Line options={options} data={tableData} />}</div>
     )
 }
 

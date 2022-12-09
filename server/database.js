@@ -3,8 +3,9 @@ const mysql = require('mysql');
 const db = mysql.createConnection({
     
     host: 'localhost',
+    port: 3306,
     user: 'root',
-    password: '', //salasana123 uus
+    password: '1234', //salasana123 uus
     database: 'webproject' 
 
 })

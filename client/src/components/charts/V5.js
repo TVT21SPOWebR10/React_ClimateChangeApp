@@ -12,7 +12,7 @@ const V5 = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/V5");
+            const response = await axios.get("http://localhost:3001/v5");
 
 
             setTableData({
@@ -100,7 +100,7 @@ const V5 = () => {
     };
 
     return (
-        <div className='chartv5'>{tableData && <Line options={options} data={tableData} />}
+        <div className='chart'>{tableData && <Line options={options} data={tableData} />}
 
         </div>
 

@@ -44,7 +44,7 @@ const Login = (props) => {
         
         
         <div className= "loginBack" >
-        <div classname= "loginform" >
+        <div className= "loginform" >
         <h1 className="title">Log In </h1>
         <form>
             <div className="inputs_container">

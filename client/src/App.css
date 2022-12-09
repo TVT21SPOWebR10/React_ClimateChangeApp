@@ -1,3 +1,14 @@
+@media (min-width: 600px) {
+  body {
+    min-width: 600px;
+  }
+}
+
+
+body {
+ 
+  background-color: #36393F;
+}
 
 footer ul {
   list-style: none;
@@ -25,7 +36,7 @@ footer div.flex-container {
   text-align: center;
   margin-bottom: 1rem;
   margin-top: -1.5rem;
-  
+
 }
 
 .subtitle {
@@ -82,16 +93,20 @@ footer div.flex-container {
 */
 
 
-  
+
 
 .loginBack {
-  background-image:url("assets/aerial-shot-beautiful-tree-forest-covered-with-fog-bled-slovenia.jpg") ;
-  height: 880px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url("assets/aerial-shot-beautiful-tree-forest-covered-with-fog-bled-slovenia.jpg");
+  height: 880px;
+  /* You must set a specified height */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
   position: relative;
-  
+
 }
 
 
@@ -122,10 +137,14 @@ footer div.flex-container {
 
 .registerBack {
   background-image: url("assets/Registerbackground.jpg");
-  height: 880px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  height: 880px;
+  /* You must set a specified height */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
   position: relative;
 }
 
@@ -153,33 +172,14 @@ footer div.flex-container {
 *
 */
 
-.chartv1{
-  
+.chart {
+  min-width: 600px;
+  margin: 0 auto;
+  max-width: 1000px;
   padding: 10px;
   background-color: white;
+}
 
-}
-.chartv5{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  background-color: white;
-}
-.chartv6{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  background-color: white;
-}
-.chartv7{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  background-color: white;
-}
-body{
-  background-color: #36393F;
-}
 
 .deleteBtn {
   background-color: #4e65f7;
@@ -198,13 +198,13 @@ body{
   margin: 10px;
 }
 
-.homeTitle{
+.homeTitle {
   color: white;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.notes{
+.notes {
   width: 530px;
   height: 100px;
   margin: auto;
@@ -217,7 +217,7 @@ body{
   display: block;
 }
 
-.chartBtn{
+.chartBtn {
   background-color: #039403;
   color: white;
   border: 2px solid transparent;
@@ -228,14 +228,15 @@ body{
   cursor: pointer;
   font-size: 0.8em;
   padding: 5px 10px;
-  
+
 }
 
 .chartBtn:hover {
   border: 2px solid #039403;
   background-color: rgb(41, 212, 66);
 }
-.chartBtnDel{
+
+.chartBtnDel {
   background-color: #940303;
   color: white;
   border: 2px solid transparent;
@@ -247,12 +248,13 @@ body{
   font-size: 0.8em;
   padding: 5px 10px;
 }
-.chartBtnDel:hover{
+
+.chartBtnDel:hover {
   border: 2px solid #940303;
   background-color: rgb(253, 116, 116);
 }
 
-.chartBtns{
+.chartBtns {
   display: flex;
   justify-content: center;
   gap: 10px;

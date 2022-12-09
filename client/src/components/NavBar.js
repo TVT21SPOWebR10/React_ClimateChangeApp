@@ -11,7 +11,7 @@ export default function Navbar(props) {
         window.localStorage.removeItem('token');
         window.localStorage.removeItem('id');
         window.location.reload(false);
-        navigate('/login')
+        navigate('/')
     }
     
     return (
