@@ -138,6 +138,13 @@ footer div.flex-container {
   padding: 10px;
   background-color: white;
 }
+.chartv8{
+  margin: auto;
+  width: 95%;
+  padding: 10px;
+  background-color: white;
+}
+
 body{
   background-color: #36393F;
 }
