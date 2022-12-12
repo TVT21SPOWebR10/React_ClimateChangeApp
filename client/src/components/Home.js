@@ -7,6 +7,7 @@ import V5 from './charts/V5';
 import V6 from './charts/V6';
 import V7 from './charts/V7';
 import V3 from './charts/V3';
+import V8 from './charts/V8';
 
 export default function Home(props) {
 
@@ -48,6 +49,7 @@ export default function Home(props) {
   const [chart5, setChart5] = useState(false);
   const [chart6, setChart6] = useState(false);
   const [chart7, setChart7] = useState(false);
+  const [chart8, setChart8] = useState(false);
 
   //notet
   const [notes, setNotes] = useState([]);
@@ -55,6 +57,7 @@ export default function Home(props) {
   const [notes5, setNotes5] = useState([]);
   const [notes6, setNotes6] = useState([]);
   const [notes7, setNotes7] = useState([]);
+  const [notes8, setNotes8] = useState([]);
 
   //haetaan notet localstoragesta.
   useEffect(() => {
@@ -68,6 +71,8 @@ export default function Home(props) {
     if ( notes6 !== null ) setNotes6(JSON.parse(notes6));
     const notes7 = window.localStorage.getItem('note7');
     if ( notes7 !== null ) setNotes7(JSON.parse(notes7));
+    const notes8 = window.localStorage.getItem('note8');
+    if ( notes8 !== null ) setNotes8(JSON.parse(notes8));
     }, []);
 
 
@@ -78,7 +83,8 @@ export default function Home(props) {
       window.localStorage.setItem('note5', JSON.stringify(notes5));
       window.localStorage.setItem('note6', JSON.stringify(notes6));
       window.localStorage.setItem('note7', JSON.stringify(notes7));
-    }, [notes, notes3, notes5, notes6, notes7]);
+      window.localStorage.setItem('note8', JSON.stringify(notes8));
+    }, [notes, notes3, notes5, notes6, notes7, notes8]);
 
   //haetaan graafit localstoragesta.
   useEffect(() => {
@@ -92,6 +98,8 @@ export default function Home(props) {
     if ( chart6 !== null ) setChart6(JSON.parse(chart6));
     const chart7 = window.localStorage.getItem('chart7');
     if ( chart7 !== null ) setChart7(JSON.parse(chart7));
+    const chart8 = window.localStorage.getItem('chart8');
+    if ( chart8 !== null ) setChart8(JSON.parse(chart8));
     }, []);
 
     //asettaa graafit localstorageen.
@@ -101,7 +109,8 @@ export default function Home(props) {
       window.localStorage.setItem('chart5', JSON.stringify(chart5));
       window.localStorage.setItem('chart6', JSON.stringify(chart6));
       window.localStorage.setItem('chart7', JSON.stringify(chart7));
-    }, [chart, chart3, chart5, chart6, chart7]);
+      window.localStorage.setItem('chart8', JSON.stringify(chart8));
+    }, [chart, chart3, chart5, chart6, chart7, chart8]);
 
 
   //poistaa kaikki graafit kerralla.
@@ -111,11 +120,13 @@ export default function Home(props) {
     setChart5(false);
     setChart6(false);
     setChart7(false);
+    setChart8(false);
     window.localStorage.setItem('chart', false);
     window.localStorage.setItem('chart3', false);
     window.localStorage.setItem('chart5', false);
     window.localStorage.setItem('chart6', false);
     window.localStorage.setItem('chart7', false);
+    window.localStorage.setItem('chart8', false);
   }
 
   //handlechange funktiot jokaisen graafin omalle notelle
@@ -139,9 +150,12 @@ export default function Home(props) {
     localStorage.setItem("notes7", e.target.value);
     setNotes7(e.target.value);
   };
+  const handleChange8 = e => {
+    localStorage.setItem("notes8", e.target.value);
+    setNotes8(e.target.value);
+  };
 
 
-  
   return (
     <>
     <Navbar />
@@ -156,12 +170,14 @@ export default function Home(props) {
       <button className="chartBtn" onClick={() => setChart5(true)}>Add V5</button>
       <button className="chartBtn" onClick={() => setChart6(true)}>Add V6</button>
       <button className="chartBtn" onClick={() => setChart7(true)}>Add V7</button>
+      <button className="chartBtn" onClick={() => setChart8(true)}>Add V8</button>
       
       <button className="chartBtnDel" onClick={() => setChart(false)}>Delete V1-V2</button>
       <button className="chartBtnDel" onClick={() => setChart3(false)}>Delete V3-V4</button>
       <button className="chartBtnDel" onClick={() => setChart5(false)}>Delete V5</button>
       <button className="chartBtnDel" onClick={() => setChart6(false)}>Delete V6</button>
       <button className="chartBtnDel" onClick={() => setChart7(false)}>Delete V7</button>
+      <button className="chartBtnDel" onClick={() => setChart8(false)}>Delete V8</button>
       
       <button className="chartBtnDel" onClick={hideChart}>Delete all</button>
 
@@ -192,6 +208,10 @@ export default function Home(props) {
       <div className="9">
       {chart7 ? <V7 /> : null}
       {chart7 ? <input type="text" placeholder="Add notes..." className="notes" value={notes7} onChange={handleChange7}/> : null} 
+      </div>
+      <div className="11">
+      {chart8 ? <V8 /> : null}
+      {chart8 ? <input type="text" placeholder="Add notes..." className="notes" value={notes8} onChange={handleChange8}/> : null}
       </div>
       </div>
     </div>

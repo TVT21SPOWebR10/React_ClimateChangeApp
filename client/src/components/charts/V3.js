@@ -8,15 +8,17 @@ import axios from 'axios'
 
 const V3 = () => {
 
+    //määritetään tila taulun datalle
     const [tableData, setTableData] = useState(null)
 
+    //haetaan data axios kutsulla tietokannasta
     const getData = async () => {
         try {
             const response = await axios.get("http://localhost:3001/v3");
             const response2 = await axios.get("http://localhost:3001/v4");
+            const response3 = await axios.get("http://localhost:3001/v10");
 
-
-
+            //asetetaan tilaan taulun data ja määritetään datan sisältö
             setTableData({
                 datasets: [
                     {
@@ -94,6 +96,21 @@ const V3 = () => {
                         hidden: true
 
                     },
+                    {
+                        label: "events",
+                        data: response3.data.filter(d => d.year ).map(d => ({ time: new Date(d.year + "-01-01"), value: 400 , event: d.event2 })),
+                        borderColor: "orange",
+                        backgroundColor: "orange",
+                        parsing: {
+                            xAxisKey: "time",
+                            yAxisKey: "value",
+                        },
+                        borderWidth: 2,
+                        pointRadius: 5,
+                        showLine: false,
+                        hidden: true
+
+                    },
                 ],
             })
         } catch (error) {
@@ -109,12 +126,30 @@ const V3 = () => {
      const options = {
         responsive: true,
         interaction: {
-            mode: 'index',
+            
             intersect: false,
           },
           stacked: false,
         plugins: {
-            legend: {
+            tooltip: {
+                boxWidth: 10,
+                width: 100,
+                callbacks: {
+                    label: function (item) {
+                        if (item.datasetIndex == 5) {
+                            var substr1 = item.dataset.data[item.dataIndex].event.substr(0, 100)
+                            var substr2 = item.dataset.data[item.dataIndex].event.substr(100 + 1)
+                            if (item.dataset.data[item.dataIndex].event.charAt(99 != " ")) {
+                                substr1 += "-"
+                            }
+                            return [substr1, substr2]
+                        } else {
+                            return item.dataset.label + " :" + item.formattedValue + " CO2"
+                        }
+                    }
+                },
+            },
+             legend: {
                 position: "top",
             },
             title: {

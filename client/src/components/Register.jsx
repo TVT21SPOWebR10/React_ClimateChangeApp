@@ -7,10 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 const Register = () => {
 
+    //määritellään muuttujat
     const navigate = useNavigate();
     const [usernameReg, SetUsernameReg] = useState('');
     const [passwordReg, SetPasswordReg] = useState('');
 
+    //funktio jolla luodaan uusi käyttäjä
     const signUp = () => {
         alert("Register completed!");
 

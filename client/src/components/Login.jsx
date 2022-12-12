@@ -7,13 +7,14 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const Login = (props) => {
 
+    //määritellään muuttujat
     const [usernameLog, setusernameLog] = useState('');
     const [passwordLog, setpasswordLog] = useState('');
     const navigate = useNavigate();
     const [loginStatus, setloginStatus] = useState(false);
     const [loginStatusText, setloginStatusText] = useState('');
 
-
+    //funktio joka lähettää axios.post pyynnön backendiin sekä tarkistaa onko käyttäjä kirjautunut sisään ja asettaa käyttäjän id:n localstorageen
     const loggaainee = e => {
 
         e.preventDefault();
