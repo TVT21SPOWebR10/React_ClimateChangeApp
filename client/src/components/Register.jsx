@@ -14,7 +14,7 @@ const Register = () => {
     const signUp = () => {
         alert("Register completed!");
 
-        axios.post("http://localhost:3001/api/register", {
+        axios.post(process.env.REACT_APP_API_ADDRESS + "/api/register", {
             username: usernameReg,
             password: passwordReg,
         }).then(() => {

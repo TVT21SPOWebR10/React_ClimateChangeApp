@@ -12,7 +12,7 @@ const V6 = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/v6");
+            const response = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v6");
 
             setTableData({
                 datasets: [

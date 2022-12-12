@@ -15,7 +15,7 @@ export default function Home(props) {
    //poistaa käyttäjän tietokannasta sekä kaikki käyttäjän luomat visualisoinnit.
   const deleteAccount = () => {  
     const id = window.localStorage.getItem('id');
-    axios.delete(`http://localhost:3001/delete/${id}`)
+    axios.delete(process.env.REACT_APP_API_ADDRESS +`/delete/${id}`)
       .then(res => {
         console.log(res)
         window.localStorage.clear();
