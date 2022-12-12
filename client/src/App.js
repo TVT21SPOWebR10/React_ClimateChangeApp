@@ -3,11 +3,9 @@ import Login from './components/Login';
 import Register from './components/Register';
 import N1 from './components/N1';
 import { Route, Routes } from 'react-router-dom';
-import Footer from './components/Footer';
 import N2 from './components/N2';
 import N3 from './components/N3';
 import Home from './components/Home';
-import Notfound from './components/Notfound';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
@@ -45,7 +43,7 @@ function App() {
         <Route path='/N2' element={<N2 />} />
         <Route path='/N3' element={<N3 />} />
         {authRoutes}
-        <Route path="*" element={ <Notfound Loggedin={userJwt != null}/>}/>
+        <Route path="*" element={ <Home Loggedin={userJwt != null}/>}/>
       </Routes>
     </div>
     </>
