@@ -8,15 +8,17 @@ import axios from 'axios'
 
 const V1 = () => {
 
+    //määritetään tila taulun datalle
     const [tableData, setTableData] = useState(null)
 
+    //haetaan data axios kutsulla tietokannasta
     const getData = async () => {
         try {
             const response = await axios.get(process.env.REACT_APP_API_ADDRESS + "v1" );
             const response2 = await axios.get("http://localhost:3001/v2");
 
 
-
+            //asetetaan tilaan taulun data ja määritetään datan sisältö
             setTableData({
                 datasets: [
                     {

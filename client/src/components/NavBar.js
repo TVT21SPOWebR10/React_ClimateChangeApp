@@ -5,6 +5,7 @@ import axios from 'axios';
 
 export default function Navbar(props) {
 
+    //logout funktio
     const auth = window.localStorage.getItem('token');
     const navigate = useNavigate();
     const loggaout = () => {
@@ -24,13 +25,10 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/N1">N1</Link>
+                            <Link className="nav-link" to="/N1">Temperature data and co2 concentrations</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/N2">N2</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/N3">N3</Link>
+                            <Link className="nav-link" to="/N2">Emission sources</Link>
                         </li>
                         { auth ? 
                         <>

@@ -14,11 +14,10 @@ import { useNavigate } from 'react-router-dom'
 const jwtFromStorage = localStorage.getItem("token");
 
 function App() {
-
-  const navigate = useNavigate();
-
+  //määtitään state muuttuja userJwt ja setUserJwt käyttäjälle joka toimii tilana käyttäjän kirjautumiselle.
   const [userJwt, setUserJwt] = useState(jwtFromStorage);
 
+  //määritetään muuttuja authRoutes, joka sisältää kirjautumis ja rekisteröinti sivut.
   let authRoutes = <>
     <Route path='/' element={<Login login={ newJwt => {
       setUserJwt(newJwt)
@@ -27,6 +26,7 @@ function App() {
     <Route path='/Register' element={<Register />} />
   </>
 
+  //jos käyttäjä kirjautunut sisään, niin authRoutes sisältää Home sivun.
   if(userJwt != null){
     authRoutes = <Route path="/Home" element={ <Home Loggedin={userJwt != null} logout={()=> {
     setUserJwt(null)

@@ -8,6 +8,7 @@ import axios from 'axios'
 
 const V6 = () => {
 
+    //samat määrittelyt jokaisessa visualisoinnissa. Tilan määrittely ja datan haku axios kutsulla.
     const [tableData, setTableData] = useState(null)
 
     const getData = async () => {

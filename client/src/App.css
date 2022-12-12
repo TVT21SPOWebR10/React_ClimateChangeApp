@@ -36,7 +36,6 @@ footer div.flex-container {
   text-align: center;
   margin-bottom: 1rem;
   margin-top: -1.5rem;
-
 }
 
 .subtitle {
@@ -82,31 +81,14 @@ footer div.flex-container {
   outline: medium none;
 }
 
-/* LOGIN CSS
-*
-*
-*
-*
-*
-*
-*
-*/
-
-
-
-
 .loginBack {
-  background-image: url("assets/aerial-shot-beautiful-tree-forest-covered-with-fog-bled-slovenia.jpg");
-  height: 880px;
-  /* You must set a specified height */
-  background-position: center;
-  /* Center the image */
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  background-size: cover;
-  /* Resize the background image to cover the entire container */
+  background-image:url("assets/aerial-shot-beautiful-tree-forest-covered-with-fog-bled-slovenia.jpg") ;
+  height: 880px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
   position: relative;
-
+  
 }
 
 
@@ -137,19 +119,15 @@ footer div.flex-container {
 
 .registerBack {
   background-image: url("assets/Registerbackground.jpg");
-  height: 880px;
-  /* You must set a specified height */
-  background-position: center;
-  /* Center the image */
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  background-size: cover;
-  /* Resize the background image to cover the entire container */
+  height: 880px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
   position: relative;
 }
 
 .Register {
-  color: white;
+  color: rgb(0, 0, 0);
 
 }
 
@@ -164,22 +142,16 @@ footer div.flex-container {
   color: red;
 }
 
-/* ChartCSS
-*
-*
-*
-*
-*
-*/
-
-.chart {
-  min-width: 600px;
-  margin: 0 auto;
-  max-width: 1000px;
+.chart{
+  margin: auto;
+  width: 50%;
   padding: 10px;
   background-color: white;
 }
 
+body{
+  background-color: #36393F;
+}
 
 .deleteBtn {
   background-color: #4e65f7;
@@ -258,4 +230,64 @@ footer div.flex-container {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+.twoRows {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+}
+
+.grid {
+  display: block;
+  flex-wrap: nowrap;
+}
+  
+.twoRows .chart{
+  width: 100%;
+  flex-basis: 25%;
+  background-color: white;
+}
+
+.toggleViewBtn{
+  background-color: #4e65f7;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+}
+
+.loginform{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.registerform{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.chartInfo{
+  background-color: white;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #E2E2E2;
+  outline: medium none;
+  resize: none;
+  display: block;
 }

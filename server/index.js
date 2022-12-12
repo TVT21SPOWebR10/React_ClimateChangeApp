@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}))
 
+//register route missä lähetetään käyttäjänimi ja salasana tietokantaan ja salataan salasana
 app.post("/api/register", (req, res) => {
 
     const username = req.body.username
@@ -37,6 +38,7 @@ app.post("/api/register", (req, res) => {
     })
 });
 
+//luodaan token
 const verifyJWT = (req, res, next)=>{
     const token = req.headers["x-access-token"]
 
@@ -58,6 +60,7 @@ app.get('/isUserAuth', verifyJWT,(req, res)=>{
     res.send("account is authenticated")
 })
 
+//login route missä verrataan käyttäjänimeä ja salasanaa tietokannasta
 app.post("/api/login", (req, res)=> {
 
     const username = req.body.username
@@ -93,7 +96,7 @@ app.post("/api/login", (req, res)=> {
     );
 });
 
-
+//tietokannan taulujen haku charteille
 app.get("/:tablename", (req, res)=>{
 
     const chartData = {
@@ -115,7 +118,7 @@ app.get("/:tablename", (req, res)=>{
     }
 })
 
-
+//poisten käyttäjän tietokannasta route
 app.delete("/delete/:id", (req, res)=>{
     const id = req.params.id
     const sqlDelete = "DELETE  FROM users WHERE id = ?"

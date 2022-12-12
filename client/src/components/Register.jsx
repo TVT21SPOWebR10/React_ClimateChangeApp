@@ -7,10 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 const Register = () => {
 
+    //määritellään muuttujat
     const navigate = useNavigate();
     const [usernameReg, SetUsernameReg] = useState('');
     const [passwordReg, SetPasswordReg] = useState('');
 
+    //funktio jolla luodaan uusi käyttäjä
     const signUp = () => {
         alert("Register completed!");
 
@@ -26,8 +28,8 @@ const Register = () => {
     return (
         <>
         <Navbar/>
-        <div className= "registerBack">
-        <div>
+        <div className="registerBack">
+        <div className="registerform">
             <h1 className="title">Create account </h1>
             <p className="subtitle">Please fill in your account details</p>
             <form>
@@ -47,7 +49,7 @@ const Register = () => {
             </div>
         </div>
         </div>
-    </>
+     </>
     );
 }
 export default Register
