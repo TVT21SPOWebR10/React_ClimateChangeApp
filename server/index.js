@@ -7,17 +7,15 @@ const db = require('./database');
 require("./database");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const port = process.env.PORT || 3001;
 
 const jwt = require('jsonwebtoken');
 
-
 const app = express();
-
 app.use(express.json());
-
-
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}))
+
 
 //register route missä lähetetään käyttäjänimi ja salasana tietokantaan ja salataan salasana
 app.post("/api/register", (req, res) => {
@@ -131,10 +129,9 @@ app.delete("/delete/:id", (req, res)=>{
     }) 
 })
 
-
-app.listen(3001, () => {
-    console.log("running server");
-})
+app.listen (port, () => {
+    console.log (`example app listening on port ${port}`)
+    })
 
 
 

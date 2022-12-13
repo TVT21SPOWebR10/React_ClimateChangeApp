@@ -14,9 +14,9 @@ const V3 = () => {
     //haetaan data axios kutsulla tietokannasta
     const getData = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/v3");
-            const response2 = await axios.get("http://localhost:3001/v4");
-            const response3 = await axios.get("http://localhost:3001/v10");
+            const response = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v3");
+            const response2 = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v4");
+            const response3 = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v10");
 
             //asetetaan tilaan taulun data ja määritetään datan sisältö
             setTableData({

@@ -20,7 +20,7 @@ const Login = (props) => {
 
         e.preventDefault();
 
-        axios.post("http://localhost:3001/api/login", {
+        axios.post(process.env.REACT_APP_API_ADDRESS + "/api/login", {
             username: usernameLog,
             password: passwordLog,
         }).then((response) => {

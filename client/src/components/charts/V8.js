@@ -18,7 +18,7 @@ const V8 = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/v8");
+            const response = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v8");
 
             
             const mappingLabels = Object.keys(response.data[0]);
