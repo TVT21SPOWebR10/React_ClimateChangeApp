@@ -5,7 +5,6 @@ const db = mysql.createConnection({
     user: 'root',
     password: '', 
     database: 'webproject' 
-
 })
 
 db.connect((error) => {

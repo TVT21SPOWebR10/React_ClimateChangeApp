@@ -132,9 +132,10 @@ footer div.flex-container {
 
 .chart{
   margin: auto;
-  width: 50%;
   padding: 10px;
   background-color: white;
+  max-width: 600px;
+  min-width: 300px;
 }
 
 body{
@@ -216,6 +217,7 @@ body{
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .twoRows {
