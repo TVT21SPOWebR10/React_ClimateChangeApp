@@ -48,4 +48,9 @@ Kaavioiden näkymän vaihto painike vaihtaa kotisivu näkymää niin, että kaav
 
 Kuva 4. Kotisivu eri näkymällä. 
 
-[Sovellus pyörii](https://climatechangeapp-370911.ew.r.appspot.com/) Google Cloud Apissa.
+# Dokumentit
+## Sovelluksen tietokantarakenne
+![TietokantaRakenne](https://user-images.githubusercontent.com/97599254/207616167-e437bb5e-0767-402f-8071-e81a1dcacb54.jpg)
+Kuva 5. Tietokantarakenne
+
+[Sovellus pyörii](https://climatechangeapp-370911.ew.r.appspot.com/) Google Cloudin App Enginessä.
