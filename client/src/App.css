@@ -1,0 +1,283 @@
+body {
+  background-color: #36393F;
+}
+
+/* Login/register css */
+
+.title {
+  color: black;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: -1.5rem;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  margin-bottom: rem;
+}
+
+.inputs_container {
+  display: flex;
+  justify-content: center;
+  display: grid;
+}
+
+.inputs_Regcontainer {
+  display: flex;
+  justify-content: center;
+  display: grid;
+}
+
+.inputs_Regcontainer input {
+  font-size: 1em;
+  outline: none;
+  padding: 5px;
+  border-radius: 10px;
+  width: 280px;
+  position: relative;
+  margin: 10px 0;
+  border: 1px solid #E2E2E2;
+  outline: medium none;
+}
+
+.inputs_container input {
+  font-size: 1em;
+  outline: none;
+  padding: 5px;
+  border-radius: 10px;
+  width: 280px;
+  position: relative;
+  margin: 10px 0;
+  border: 1px solid #E2E2E2;
+  outline: medium none;
+}
+
+.loginBack {
+  background-image: url("assets/aerial-shot-beautiful-tree-forest-covered-with-fog-bled-slovenia.jpg");
+  height: 880px;
+  /* You must set a specified height */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  position: relative;
+
+}
+
+
+.login_button {
+  display: block;
+  margin: 2rem auto 1rem auto;
+  width: 280px;
+  padding: 0.75rem 1rem;
+  border-radius: 25px;
+  outline: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #4e65f7;
+  color: white;
+  border: 2px solid transparent;
+}
+
+.login_button:hover {
+  border: 2px solid #4e65f7;
+  background-color: #000;
+}
+
+.link_container {
+  display: flex;
+  justify-content: center;
+}
+
+.registerBack {
+  background-image: url("assets/Registerbackground.jpg");
+  height: 880px;
+  /* You must set a specified height */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  position: relative;
+}
+
+.Register {
+  color: rgb(0, 0, 0);
+
+}
+
+
+.loginstatus {
+  display: flex;
+  justify-content: center;
+}
+
+.LoginWrong {
+  font-size: 20px;
+  color: red;
+}
+
+/* ChartCss */
+
+
+.chart {
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
+  background-color: white;
+}
+
+body {
+  background-color: #36393F;
+}
+
+.deleteBtn {
+  background-color: #4e65f7;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.homeTitle {
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.notes {
+  width: 530px;
+  height: 100px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #E2E2E2;
+  outline: medium none;
+  resize: none;
+  display: block;
+}
+
+.chartBtn {
+  background-color: #039403;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 5px 10px;
+
+}
+
+.chartBtn:hover {
+  border: 2px solid #039403;
+  background-color: rgb(41, 212, 66);
+}
+
+.chartBtnDel {
+  background-color: #940303;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 5px 10px;
+}
+
+.chartBtnDel:hover {
+  border: 2px solid #940303;
+  background-color: rgb(253, 116, 116);
+}
+
+.chartBtns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.twoRows {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+
+}
+
+.grid {
+  display: block;
+  flex-wrap: nowrap;
+}
+
+.twoRows .chart {
+  width: 100%;
+  flex-basis: 25%;
+  background-color: white;
+}
+
+.toggleViewBtn {
+  background-color: #4e65f7;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+}
+
+.loginform {
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.registerform {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.chartInfo {
+  background-color: white;
+  margin: auto;
+  min-width: 300x;
+  max-width: 1000px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #E2E2E2;
+  outline: medium none;
+  resize: none;
+  display: block;
+}
