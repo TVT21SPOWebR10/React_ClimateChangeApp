@@ -20,19 +20,19 @@ const V8 = () => {
         try {
             const response = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v8");
 
-            
+
             const mappingLabels = Object.keys(response.data[0]);
             const mappingArray = []
 
-           
+
             mappingLabels.map(c => {
 
-                if (c != "year" && c != "description" && c != "data_link" && c != "desc_link") {                            
-                    mappingArray.push(response.data.map(d => ({ xAxis: d.year, value: d[c], country: c })))                
+                if (c != "year" && c != "description" && c != "data_link" && c != "desc_link") {
+                    mappingArray.push(response.data.map(d => ({ xAxis: d.year, value: d[c], country: c })))
 
                 }
             })
-            
+
             setTableData({
                 datasets: mappingArray.map(c => {
 
@@ -114,12 +114,12 @@ const V8 = () => {
 
     if (tableData) {
         return (
-            
+
             <div className='chart'><Line options={options} data={tableData} /></div>
 
         )
     }
-   
+
 
 }
 

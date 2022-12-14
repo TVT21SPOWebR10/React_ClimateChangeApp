@@ -14,7 +14,7 @@ const V1 = () => {
     //haetaan data axios kutsulla tietokannasta
     const getData = async () => {
         try {
-            const response = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v1" );
+            const response = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v1");
             const response2 = await axios.get(process.env.REACT_APP_API_ADDRESS + "/v2");
 
 
@@ -49,7 +49,7 @@ const V1 = () => {
                         borderWidth: 0.9,
 
                     },
-                    
+
                     {
                         label: "Southern Hemisphere Monthly",
                         data: response.data.map(d => ({ time: new Date(d.Time_sm), value: d.anomaly_sm })),
@@ -76,7 +76,7 @@ const V1 = () => {
                         pointRadius: 0,
 
                     },
-                    
+
                     {
                         label: "Northern Hemisphere Monthly",
                         data: response.data.map(d => ({ time: new Date(d.Time_nm), value: d.anomaly_sm })),
@@ -133,15 +133,15 @@ const V1 = () => {
         responsive: true,
         responsiveOptions: [
             ['screen and (min-width: 600px)', {
-              maintainAspectRatio: false,
-              maxWidth: 600
+                maintainAspectRatio: false,
+                maxWidth: 600
             }],
             ['screen and (max-width: 600px)', {
-              maintainAspectRatio: true
+                maintainAspectRatio: true
             }]
-          ],
-        
-        
+        ],
+
+
         plugins: {
             legend: {
                 position: "top",
@@ -150,7 +150,7 @@ const V1 = () => {
                 display: true,
                 text: "Temperature Anomalies from 1850",
             },
-          
+
         },
         scales: {
             x: {

@@ -21,7 +21,7 @@ const Register = () => {
             password: passwordReg,
         }).then(() => {
             alert("toimii");
-        });navigate('/login');
+        });navigate('/Login');
     };
 
 

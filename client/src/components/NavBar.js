@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 export default function Navbar(props) {
@@ -12,9 +12,9 @@ export default function Navbar(props) {
         window.localStorage.removeItem('token');
         window.localStorage.removeItem('id');
         window.location.reload(false);
-        navigate('/login')
+        navigate('/Login')
     }
-    
+
     return (
         <nav id="nav" className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
             <div className="container-fluid">
@@ -30,27 +30,27 @@ export default function Navbar(props) {
                         <li className="nav-item">
                             <Link className="nav-link" to="/N2">Emission sources</Link>
                         </li>
-                        { auth ? 
-                        <>
-                        <li className="nav-item">
-                             <Link className="nav-link" to="/Home">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link onClick={loggaout} className="nav-link" to="/">Logout</Link>
-                        </li>
-                        </>
-                        :
-                        <>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/register">SignUp</Link>
-                        </li>
-                        </>
+                        {auth ?
+                            <>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/Home">Home</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link onClick={loggaout} className="nav-link" to="/">Logout</Link>
+                                </li>
+                            </>
+                            :
+                            <>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/login">Login</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/register">SignUp</Link>
+                                </li>
+                            </>
                         }
                     </ul>
-                    
+
                 </div>
             </div>
         </nav>

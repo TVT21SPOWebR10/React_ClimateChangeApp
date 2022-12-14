@@ -8,9 +8,6 @@ import N3 from './components/N3';
 import Home from './components/Home';
 import { useState } from 'react';
 
-
-
-
 const jwtFromStorage = localStorage.getItem("token");
 
 function App() {
@@ -19,32 +16,32 @@ function App() {
 
   //määritetään muuttuja authRoutes, joka sisältää kirjautumis ja rekisteröinti sivut.
   let authRoutes = <>
-    <Route path='/login' element={<Login login={ newJwt => {
+    <Route path='/Login' element={<Login login={newJwt => {
       setUserJwt(newJwt)
       window.localStorage.setItem('token', newJwt)
-      } } />} />
+    }} />} />
     <Route path='/Register' element={<Register />} />
   </>
 
   //jos käyttäjä kirjautunut sisään, niin authRoutes sisältää Home sivun.
-  if(userJwt != null){
-    authRoutes = <Route path="/Home" element={ <Home Loggedin={userJwt != null} logout={()=> {
-    setUserJwt(null)
-    window.localStorage.removeItem('token');
-    }}/>}/>
+  if (userJwt != null) {
+    authRoutes = <Route path="/Home" element={<Home Loggedin={userJwt != null} logout={() => {
+      setUserJwt(null)
+      window.localStorage.removeItem('token');
+    }} />} />
   }
 
   return (
     <>
-    <div className="App">
-      <Routes>
-        <Route path='/N1' element={<N1 />} />
-        <Route path='/N2' element={<N2 />} />
-        <Route path='/N3' element={<N3 />} />
-        {authRoutes}
-        <Route path="*" element={ <N1 Loggedin={userJwt != null}/>}/>
-      </Routes>
-    </div>
+      <div className="App">
+        <Routes>
+          <Route path='/N1' element={<N1 />} />
+          <Route path='/N2' element={<N2 />} />
+          <Route path='/N3' element={<N3 />} />
+          {authRoutes}
+          <Route path="*" element={<N1 Loggedin={userJwt != null} />} />
+        </Routes>
+      </div>
     </>
   );
 }

@@ -1,30 +1,19 @@
 const mysql = require('mysql');
 
-const db = mysql.createConnection({
-    
-    user: 'testuser',
-    password: '1234', //salasana123 uus
-    database: 'webproject',
-    
-})
+const connection = mysql.createPool({
+    socketPath: "/cloudsql/climatechangeapp-370911:europe-west1:webproject",
+    user: 'root',
+    password: '1234',
+    database: 'webproject'
 
-if(process.env.NODE_ENV == "production") {
-    db.socketPath = process.env.GAE_DB_SOCKET
-    console.log("cloud database")
-} else {
-    db.host ="localhost";
-    console.log("localhost")
-    
-}
+});
 
-db.connect((error) => {
+connection.query('SELECT * FROM users', (error, results) => {
     if (error) {
-        console.log(error)
-    } else {
-        console.log("MYSQL connected...")
+        console.error('Error retrieving data from the database:', error);
+        return;
     }
-})
+    console.log('Data retrieved from the database:', results);
+});
 
-
-
-module.exports = db;
+module.exports = connection;

@@ -20,7 +20,7 @@ const V7 = () => {
                 datasets: [
                     {
                         label: "CO2 (ppm)",
-                        data: response.data.map(d => ({ xAxis: d.time, value: d.co2})),
+                        data: response.data.map(d => ({ xAxis: d.time, value: d.co2 })),
                         borderColor: "blue",
                         backgroundColor: "blue",
                         yAxisID: 'y',
@@ -84,10 +84,10 @@ const V7 = () => {
     const options = {
         responsive: true,
         interaction: {
-            
+
             intersect: false,
-          },
-          stacked: false,
+        },
+        stacked: false,
         plugins: {
             legend: {
                 position: "top",
@@ -96,8 +96,8 @@ const V7 = () => {
                 display: true,
                 text: "Evolution of global temperature over the past two million years",
             },
-        
-         tooltip: {
+
+            tooltip: {
                 boxWidth: 10,
                 width: 100,
                 callbacks: {
@@ -155,7 +155,7 @@ const V7 = () => {
         },
     };
 
-   
+
 
     return (
         <div className='chart'>{tableData && <Line options={options} data={tableData} />}

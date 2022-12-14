@@ -24,52 +24,52 @@ const Login = (props) => {
             username: usernameLog,
             password: passwordLog,
         }).then((response) => {
-            if(!response.data.auth){
+            if (!response.data.auth) {
                 setloginStatus(false);
-            }else{
-            console.log(response.data);
-            localStorage.setItem("token", response.data.token)
-            const receivedJWT = response.data.token;
-            props.login(receivedJWT);
-            setloginStatus(true);
-            localStorage.setItem("id", response.data.result[0].id);
-            localStorage.setItem("username", response.data.result[0].username);
-            navigate('/Home');
+            } else {
+                console.log(response.data);
+                localStorage.setItem("token", response.data.token)
+                const receivedJWT = response.data.token;
+                props.login(receivedJWT);
+                setloginStatus(true);
+                localStorage.setItem("id", response.data.result[0].id);
+                localStorage.setItem("username", response.data.result[0].username);
+                navigate('/Home');
             }
         });
     };
 
     return (
         <>
-        <Navbar/>
-        <div className="loginBack">
-        <div className="loginform">
-        <h1 className="title">Log In </h1>
-        <form>
-            <div className="inputs_container">
+            <Navbar />
+            <div className="loginBack">
+                <div className="loginform">
+                    <h1 className="title">Log In </h1>
+                    <form>
+                        <div className="inputs_container">
 
-                <input type="text" placeholder="username.." onChange={(e)=>{
-                        setusernameLog(e.target.value)
-                    }}/>
+                            <input type="text" placeholder="username.." onChange={(e) => {
+                                setusernameLog(e.target.value)
+                            }} />
 
-                <input type="password" placeholder="password.." onChange={(e)=>{
-                        setpasswordLog(e.target.value)
-                    }}/>
-            </div>
-            
-                    <div className="loginstatus">
-                    <h1 className="LoginWrong">{loginStatus}{loginStatusText}</h1>
+                            <input type="password" placeholder="password.." onChange={(e) => {
+                                setpasswordLog(e.target.value)
+                            }} />
+                        </div>
+
+                        <div className="loginstatus">
+                            <h1 className="LoginWrong">{loginStatus}{loginStatusText}</h1>
+                        </div>
+
+                        <button onClick={loggaainee} className="login_button" type="submit">Log in</button>
+                    </form>
+                    <div className="link_container">
+                        <Link className="Register" to="/register">No account? Click here to register</Link>
                     </div>
-
-            <button onClick={loggaainee} className="login_button" type="submit">Log in</button>
-        </form>
-        <div className="link_container">
-          <Link className="Register" to="/register">No account? Click here to register</Link>
-        </div> 
-        </div>
-        </div>
+                </div>
+            </div>
         </>
-        
+
     );
 }
 export default Login

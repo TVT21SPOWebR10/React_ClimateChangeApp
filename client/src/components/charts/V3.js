@@ -27,7 +27,7 @@ const V3 = () => {
                         borderColor: "black",
                         backgroundColor: "grey",
                         borderWidth: 2,
-                        
+
 
                         parsing: {
                             xAxisKey: "time",
@@ -64,9 +64,9 @@ const V3 = () => {
                         hidden: true
 
                     },
-                        
-                    
-                   {
+
+
+                    {
                         label: "Optional DE",
                         data: response2.data.filter(d => d.De08_date != 0).map(d => ({ time: new Date(d.De08_date + "-01-01"), value: d.De08_Mixingratio })),
                         borderColor: "purple",
@@ -98,7 +98,7 @@ const V3 = () => {
                     },
                     {
                         label: "events",
-                        data: response3.data.filter(d => d.year ).map(d => ({ time: new Date(d.year + "-01-01"), value: 400 , event: d.event2 })),
+                        data: response3.data.filter(d => d.year).map(d => ({ time: new Date(d.year + "-01-01"), value: 400, event: d.event2 })),
                         borderColor: "orange",
                         backgroundColor: "orange",
                         parsing: {
@@ -123,13 +123,13 @@ const V3 = () => {
     }, [])
 
 
-     const options = {
+    const options = {
         responsive: true,
         interaction: {
-            
+
             intersect: false,
-          },
-          stacked: false,
+        },
+        stacked: false,
         plugins: {
             tooltip: {
                 boxWidth: 10,
@@ -149,7 +149,7 @@ const V3 = () => {
                     }
                 },
             },
-             legend: {
+            legend: {
                 position: "top",
             },
             title: {

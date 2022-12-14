@@ -13,13 +13,13 @@ export default function N1() {
   return (
     <>
       <Navbar />
-      <V1 /> 
+      <V1 />
       <div className="chartInfo">
         <p><a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/data/current/download.html">Data source for V1</a></p>
         <p><a href="https://www.nature.com/articles/nature03265">Full study for V2</a></p>
         <p>Northern Hemisphere temperature reconstruction for the past 2,000 years by combining low-resolution proxies with tree-ring data, using a wavelet transform technique to achieve timescale-dependent processing of the data.</p>
       </div> <br />
-      <V3 /> 
+      <V3 />
       <div className="chartInfo">
         <p><a href="https://gml.noaa.gov/ccgg/trends/">Data source for V3</a></p>
         <p><a href="https://gml.noaa.gov/ccgg/about/co2_measurements.html">Data measurement for V3</a></p>
@@ -27,19 +27,19 @@ export default function N1() {
         <p> <a href="https://cdiac.ess-dive.lbl.gov/trends/co2/lawdome.html">Descriptions for V4</a></p>
         <p><a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat">Data source for V4</a></p>
       </div> <br />
-      <V5 /> 
+      <V5 />
       <div className="chartInfo">
         <p><a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2">Data source for V5</a></p>
         <p><a href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html">Descriptions V5</a></p>
         <p>In January 1998, the collaborative ice-drilling project between Russia, the United States, and France at the Russian Vostok station in East Antarctica yielded the deepest ice core ever recovered, reaching a depth of 3,623 m (Petit et al. 1997, 1999). Ice cores are unique with their entrapped air inclusions enabling direct records of past changes in atmospheric trace-gas composition. Preliminary data indicate the Vostok ice-core record extends through four climate cycles, with ice slightly older than 400 kyr (Petit et al. 1997, 1999).</p>
       </div> <br />
-      <V6 /> 
+      <V6 />
       <div className="chartInfo">
         <p> <a href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt">Data source for V6</a></p>
         <p><a href="https://www.ncei.noaa.gov/access/paleo-search/study/17975">Descriptions V6</a></p>
         <p>The European Project for Ice Coring in Antarctica Dome ice core from Dome C (EDC) has allowed for the reconstruction of atmospheric CO2 concentrations for the last 800,000 years. Here we revisit the oldest part of the EDC CO2 record using different air extraction methods and sections of the core.</p>
       </div> <br />
-      <V7 /> 
+      <V7 />
       <div className="chartInfo">
         <p> <a href="http://carolynsnyder.com/publications.php">Data source for V7</a></p>
         <p> <a href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf">Descriptions V7</a></p>

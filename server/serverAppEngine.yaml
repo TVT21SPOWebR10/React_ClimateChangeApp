@@ -1,4 +1,5 @@
 runtime: nodejs16
 service: server
+entrypoint: node index.js
 env_variables:
   GAE_DB_SOCKET: "/cloudsql/climatechangeapp-370911:europe-west1:webproject"
