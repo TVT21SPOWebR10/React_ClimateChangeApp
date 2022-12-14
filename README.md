@@ -10,9 +10,9 @@ Climate Change App on Oulun ammattikorkeakoulun 2. vuoden opiskelijoiden toteutt
 
  
 
-#Sovelluksen Käyttöliittymien Toteutus 
+# Sovelluksen Käyttöliittymien Toteutus 
 
-##Ei-kirjautuneen käyttöliittymä 
+## Ei-kirjautuneen käyttöliittymä 
 
 Ei-kirjautuneen käyttöliittymän yläpalkista löytyvät eri teemoilla olevien ilmastonmuutoksen kuvaajien linkit sekä linkki asiakastilille kirjautumiseen ja sen luomiseen. Etusivun (kuva 1) linkistä “N1” pääsee suoraan lämpötilatiedot ja co2 pitoisuudet –osioon, mistä löytyy kaaviot 1-7 ja 10.  
 
@@ -48,4 +48,4 @@ Kaavioiden näkymän vaihto painike vaihtaa kotisivu näkymää niin, että kaav
 
 Kuva 4. Kotisivu eri näkymällä. 
 
-[Sovellus pyörii](https://climatechangeapp-370911.ew.r.appspot.com/)Google Cloud Apissa.
+[Sovellus pyörii](https://climatechangeapp-370911.ew.r.appspot.com/) Google Cloud Apissa.
