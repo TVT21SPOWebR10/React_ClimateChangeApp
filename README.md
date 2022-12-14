@@ -34,7 +34,7 @@ Rekisteröityminen tapahtuu syöttämällä käyttäjänimi ja salasana lomakkee
 
 Kuva 2. Lämpötilatiedot ja co2 pitoisuudet –osio, missä kaaviot 1-7 ja 10. 
 
-Kotisivunäkymän yläpalkin alapuolella näkyy tervetulo viesti sekä kirjautuneen käyttäjän käyttäjänimi. Viestin alapuolella näkyy Kuvaajien lisäys ja poisto painikkeita, jotka on värikoodattu vihreäksi ja punaiseksi. Jokaiselle Kuvaajalle on Oma painike, millä lisätä tai poistaa sekä painike jolla voi poistaa jokaisen käyttäjän tekemän kaavion. Jokaisen Kaavion alapuolella on oma kirjoitusalue, mihin käyttäjä voi kirjoittaa muistiinpanoja kaaviosta jos näin haluaa. Käyttäjä voi listätä kotisivulleen kaikki kaaviot ja tallentaa näkymän, tai yhden kaavion mikäli näin haluaa. 
+Kotisivunäkymän yläpalkin alapuolella näkyy tervetulo viesti sekä kirjautuneen käyttäjän käyttäjänimi. Viestin alapuolella näkyy Kuvaajien lisäys ja poisto painikkeita, jotka on värikoodattu vihreäksi ja punaiseksi. Jokaiselle kuvaajalle on oma painike, millä voi lisätä tai poistaa sekä painike jolla voi poistaa jokaisen käyttäjän tekemän kaavion. Jokaisen kaavion alapuolella on oma kirjoitusalue, mihin käyttäjä voi kirjoittaa muistiinpanoja kaaviosta jos näin haluaa. Käyttäjä voi listata kotisivulleen kaikki kaaviot ja tallentaa näkymän, tai yhden kaavion mikäli näin haluaa. 
 
 Kotisivulla on myös sivun alareunassa molemmin puolin painikkeet, mistä voi poistaa käyttäjän tai vaihtaa kaavioiden näkymää. Poista käyttäjä painike varmistaa käyttäjältä haluaako tämä varmasti poistaa käyttäjänsä ja jos käyttäjä vastaa kyllä niin käyttäjän tiedot poistetaan tietokannasta, käyttäjän luomat visualisoinnit poistetaan käyttäjältä sekä käyttäjän luomat muistiinpanot poistetaan käyttäjältä. 
 
