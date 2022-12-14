@@ -24,7 +24,7 @@ Kolmas linkki “N3” avaa Käyttäjän luoman visualisointinäkymän, joka nä
 
 Kuva 1. Kirjautumis-sivu ja ei-kirjautuneen yläpalkki. 
 
-##Kirjautuneen käyttöliittymä 
+## Kirjautuneen käyttöliittymä 
 
 Yläpalkissa näkyvät linkit asiakkaan kirjautumiseen ja rekisteröitymiseen. Kirjautumisnäkymä on toteutettu omana linkkinä, joka ohjaa kirjautumis-sivulle. Kirjautuminen tapahtuu käyttäjänimellä ja salasanalla. Myös kirjautumisnäkymässä on linkki rekisteröitymiseen, mikäli asiakkaalla ei ole vielä tiliä. Onnistuneen kirjautumisen jälkeen sovelluksen yläpalkista poistuu kirjautuminen ja rekisteröityminen ja niiden tilalle tulee Kotisivu ja kirjaudu ulos painike. 
 
