@@ -1,4 +1,4 @@
-## ClimateChangeApp - Ilmastonmuutos visualisointityökalu
+# ClimateChangeApp - Ilmastonmuutos visualisointityökalu
 
 Tekijät: Lauri Ilkka, Veeti Karnaranta, Tuukka Huru ja Osman Akbaba 
 
